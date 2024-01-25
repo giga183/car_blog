@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-md">
+        <div class="row ">
+            <div class="col-lg-8 col-md-8 ml-auto">
+                <div class="row align-items-center pt-md-4 mt-md-5 mb-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-title text-center mt-3">
+                                <h3>Add Car</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <form method="POST">
+                                        {{ car_form.hidden_tag() }}
+                                        {{ car_form.car_manufacturer(placeholder="Enter Manufacturer", class="form-control mt-1 shadow") }}
+                                        {{ car_form.car_model(class="form-control mt-1 shadow",
+                                                   placeholder="Enter Model") }}
+                                        {{ car_form.car_price(class="form-control mt-1 shadow",
+                                                   placeholder="Enter Price") }}
+                                        {{ car_form.image_link(class="form-control mt-1 shadow", placeholder="Enter image link") }}
+
+                                        {{ car_form.submit(class="btn btn-dark", style="position:absolute; right:90px; bottom:-25px") }}
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

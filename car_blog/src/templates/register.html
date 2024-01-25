@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-md bg-warning rounded shadow mt-2 p-4">
+        <h3>Register</h3>
+        {% for field, errors in form.errors.items() %}
+            {% for error in errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+            {% endfor %}
+        {% endfor %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username( class='form-control', placeholder=form.username.label.text) }}
+            {{ form.password(class='form-control', placeholder=form.password.label.text) }}
+            {{ form.confirm_password(class='form-control', placeholder=form.confirm_password.label.text) }}
+
+            {{ form.submit(class='btn btn-dark mt-3') }}
+
+
+        </form>
+    </div>
+
+
+{% endblock %}

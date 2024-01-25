@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-lg">
+
+        <h1 class="text-center">Cars For Sale</h1></p>
+
+        <div class="col-md-5">
+            {% for cars_list in cars_list %}
+                <div class="card">
+                    <a href="#">
+                        <img src="{{ cars_list.img }}" class="card-img-top">
+                    </a>
+                        <tr>
+                            <th> {{ cars_list.car_manufacturer }} </th>
+                            <th> {{ cars_list.car_model }} </th>
+                            <th> <h5>price:</h5> {{ cars_list.car_price }}$ </th>
+                        </tr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
